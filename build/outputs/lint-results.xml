@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="4" by="lint 23.0.2">
+
+    <issue
+        id="GradleDeprecated"
+        severity="Warning"
+        message="&apos;android&apos; is deprecated; use &apos;com.android.application&apos; instead"
+        category="Correctness"
+        priority="6"
+        summary="Looks for deprecated Gradle constructs"
+        explanation="This detector looks for deprecated Gradle constructs which currently work but will likely stop working in a future update."
+        errorLine1="apply plugin: &apos;android&apos;"
+        errorLine2="~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/snahider/Github/androidci/HelloWorld/build.gradle"
+            line="11"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        severity="Warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        category="Correctness"
+        priority="6"
+        summary="Checks that the manifest specifies a targetSdkVersion that is recent"
+        explanation="When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.
+
+To fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        url="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        urls="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        errorLine1="    &lt;uses-sdk"
+        errorLine2="    ^">
+        <location
+            file="/Users/snahider/Github/androidci/HelloWorld/AndroidManifest.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+</issues>
